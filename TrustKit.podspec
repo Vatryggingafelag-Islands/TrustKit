@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "TrustKit"
-  s.version      = "1.7.0"
+  s.version      = "1.7.1"
   s.summary      = 'TrustKit is an open source framework that makes it easy to deploy SSL pinning in any iOS, macOS, tvOS or watchOS App.'
   s.homepage     = "https://datatheorem.github.io/TrustKit"
   s.documentation_url = 'https://datatheorem.github.io/TrustKit/documentation/'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors      = 'Alban Diquet', 'Angela Chow', 'Eric Castro'
-  s.source       = { :git => "https://github.com/datatheorem/TrustKit.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/fabiocsantos/TrustKit.git", :tag => "#{s.version}" }
 
   s.ios.deployment_target = '11.0'
   s.osx.deployment_target = '10.13'
