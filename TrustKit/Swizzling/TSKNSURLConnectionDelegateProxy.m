@@ -14,7 +14,7 @@
 #import "../TSKLog.h"
 #import "../public/TSKTrustDecision.h"
 #import "../public/TSKPinningValidator.h"
-#import "../Dependencies/RSSwizzle/RSSwizzle.h"
+#import "../Dependencies/RSSwizzle/TKRSSwizzle.h"
 
 typedef void (^AsyncCompletionHandler)(NSURLResponse *response, NSData *data, NSError *connectionError);
 

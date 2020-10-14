@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TrustKit"
-  s.version      = "1.7.2"
+  s.version      = "1.7.0_OS"
   s.summary      = 'TrustKit is an open source framework that makes it easy to deploy SSL pinning in any iOS, macOS, tvOS or watchOS App.'
   s.homepage     = "https://datatheorem.github.io/TrustKit"
   s.documentation_url = 'https://datatheorem.github.io/TrustKit/documentation/'
@@ -22,7 +22,6 @@ Pod::Spec.new do |s|
     'TrustKit/public/TSKPinningValidatorCallback.h',
     'TrustKit/public/TSKPinningValidatorResult.h',
     'TrustKit/public/TSKTrustDecision.h',
-    'TrustKit/Dependencies/RSSwizzle/RSSwizzle.h',
   ]
   s.frameworks = ['Foundation', 'Security']
   s.requires_arc = true

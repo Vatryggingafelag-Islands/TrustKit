@@ -6,7 +6,7 @@
 //
 //
 
-#import "RSSwizzle.h"
+#import "TKRSSwizzle.h"
 #import <objc/runtime.h>
 #include <dlfcn.h>
 #import <os/lock.h>
@@ -189,7 +189,7 @@ typedef IMP (^RSSWizzleImpProvider)(void);
 
 
 #pragma mark └ RSSwizzle
-@implementation RSSwizzle
+@implementation TKRSSwizzle
 
 static void swizzle(Class classToSwizzle,
                     SEL selector,

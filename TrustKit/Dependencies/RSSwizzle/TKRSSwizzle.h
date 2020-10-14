@@ -185,7 +185,7 @@ typedef NS_ENUM(NSUInteger, RSSwizzleMode) {
     RSSwizzleModeOncePerClassAndSuperclasses = 2
 };
 
-@interface RSSwizzle : NSObject
+@interface TKRSSwizzle : NSObject
 
 #pragma mark └ Swizzle Instance Method
 
@@ -332,7 +332,7 @@ typedef NS_ENUM(NSUInteger, RSSwizzleMode) {
                                  RSSWReplacement, \
                                  RSSwizzleMode, \
                                  KEY) \
-    [RSSwizzle \
+    [TKRSSwizzle \
      swizzleInstanceMethod:selector \
      inClass:[classToSwizzle class] \
      newImpFactory:^id(RSSwizzleInfo *swizzleInfo) { \
@@ -354,7 +354,7 @@ typedef NS_ENUM(NSUInteger, RSSwizzleMode) {
                               RSSWReturnType, \
                               RSSWArguments, \
                               RSSWReplacement) \
-    [RSSwizzle \
+    [TKRSSwizzle \
      swizzleClassMethod:selector \
      inClass:[classToSwizzle class] \
      newImpFactory:^id(RSSwizzleInfo *swizzleInfo) { \
