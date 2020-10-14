@@ -157,7 +157,7 @@ static BOOL blockIsCompatibleWithMethodType(id block, const char *methodType){
 
 static BOOL blockIsAnImpFactoryBlock(id block){
     const char *blockType = blockGetType(block);
-    RSSwizzleImpFactoryBlock dummyFactory = ^id(RSSwizzleInfo *swizzleInfo){
+    RSSwizzleImpFactoryBlock dummyFactory = ^id(TKRSSwizzleInfo *swizzleInfo){
         return nil;
     };
     const char *factoryType = blockGetType(dummyFactory);
@@ -172,12 +172,12 @@ static BOOL blockIsAnImpFactoryBlock(id block){
 #pragma mark └ RSSwizzleInfo
 typedef IMP (^RSSWizzleImpProvider)(void);
 
-@interface RSSwizzleInfo()
+@interface TKRSSwizzleInfo()
 @property (nonatomic,copy) RSSWizzleImpProvider impProviderBlock;
 @property (nonatomic, readwrite) SEL selector;
 @end
 
-@implementation RSSwizzleInfo
+@implementation TKRSSwizzleInfo
 
 -(RSSwizzleOriginalIMP)getOriginalImplementation{
     NSAssert(_impProviderBlock,nil);
@@ -233,7 +233,7 @@ static void swizzle(Class classToSwizzle,
         return imp;
     };
     
-    RSSwizzleInfo *swizzleInfo = [RSSwizzleInfo new];
+    TKRSSwizzleInfo *swizzleInfo = [TKRSSwizzleInfo new];
     swizzleInfo.selector = selector;
     swizzleInfo.impProviderBlock = originalImpProvider;
     

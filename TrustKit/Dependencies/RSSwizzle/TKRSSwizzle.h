@@ -144,7 +144,7 @@ typedef void (*RSSwizzleOriginalIMP)(void /* id, SEL, ... */ );
 /**
  RSSwizzleInfo is used in the new implementation block to get and call original implementation of the swizzled method.
  */
-@interface RSSwizzleInfo : NSObject
+@interface TKRSSwizzleInfo : NSObject
 
 /**
  Returns the original implementation of the swizzled method.
@@ -173,7 +173,7 @@ typedef void (*RSSwizzleOriginalIMP)(void /* id, SEL, ... */ );
     Its signature should be: `method_return_type ^(id self, method_args...)`. 
     The selector is not available as a parameter to this block.
  */
-typedef id (^RSSwizzleImpFactoryBlock)(RSSwizzleInfo *swizzleInfo);
+typedef id (^RSSwizzleImpFactoryBlock)(TKRSSwizzleInfo *swizzleInfo);
 
 typedef NS_ENUM(NSUInteger, RSSwizzleMode) {
     /// RSSwizzle always does swizzling.
@@ -335,7 +335,7 @@ typedef NS_ENUM(NSUInteger, RSSwizzleMode) {
     [TKRSSwizzle \
      swizzleInstanceMethod:selector \
      inClass:[classToSwizzle class] \
-     newImpFactory:^id(RSSwizzleInfo *swizzleInfo) { \
+     newImpFactory:^id(TKRSSwizzleInfo *swizzleInfo) { \
         RSSWReturnType (*originalImplementation_)(_RSSWDel3Arg(__unsafe_unretained id, \
                                                                SEL, \
                                                                RSSWArguments)); \
@@ -357,7 +357,7 @@ typedef NS_ENUM(NSUInteger, RSSwizzleMode) {
     [TKRSSwizzle \
      swizzleClassMethod:selector \
      inClass:[classToSwizzle class] \
-     newImpFactory:^id(RSSwizzleInfo *swizzleInfo) { \
+     newImpFactory:^id(TKRSSwizzleInfo *swizzleInfo) { \
         RSSWReturnType (*originalImplementation_)(_RSSWDel3Arg(__unsafe_unretained id, \
                                                                SEL, \
                                                                RSSWArguments)); \
